@@ -2,6 +2,8 @@ import "./App.css";
 import { useState } from "react";
 import data from './components/data'
 
+import Header from './components/Header'
+
 function App() {
   let discoveredPokemon = []
 
@@ -16,11 +18,20 @@ function App() {
 
   return (
     <div className="App">
-      <input type="search" id="poke-search" placeholder="search the name of the pokemon, e.g: Pikachu"/>
-      <button onClick={searchPokemon}>Search</button>
+      <Header pokemons={data}/>
+      <div className="search-container">
+        <input type="search" id="poke-search" placeholder="search the name of the pokemon, e.g: Pikachu"/>
+        <button onClick={searchPokemon}>Search</button>
+      </div>
       <div>
         { discoveredPokemon.includes(`${pokemon}`) ?
-          <img src={require(`../public/assets/${pokemon}.png`)} alt="pokemon"/> : <h2>Sorry, this pokemon hasn't been discovered</h2>
+          <div className="poke-img-container">
+            <img src={require(`../public/assets/${pokemon}.png`)} alt="pokemon"/>
+          </div>
+          : 
+          <div className="error-message-container">
+            <h2>Sorry, this pokemon hasn't been discovered</h2>
+          </div>
         }
       </div>
     </div>

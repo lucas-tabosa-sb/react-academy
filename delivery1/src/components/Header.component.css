@@ -1,0 +1,70 @@
+.main-header {
+    background: rgb(184, 22, 22);
+    padding: 0 3rem 0 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.app-title {
+    margin-left: 1rem;
+}
+
+.menu-container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.menu-bar-1,
+.menu-bar-2,
+.menu-bar-3 {
+    background-color: #fff;
+    width: 50px;
+    height: 3px;
+    margin: 8px 0;
+
+    transition: .4s;
+}
+
+.change .menu-bar-1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .menu-bar-2 {
+    opacity: 0;
+}
+
+.change .menu-bar-3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+.side-panel {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 90px;
+    right: 0;
+    background: rgb(184, 22, 22);
+    overflow-x: hidden;
+    transition: .5s;
+
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+.side-panel li {
+    transition: .3s;
+    margin: 4px 0;
+    list-style: none;
+}
+
+.show {
+    width: 300px;
+}
